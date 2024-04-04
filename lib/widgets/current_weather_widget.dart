@@ -4,7 +4,6 @@
 //
 
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:weatherapp_started/generated/assets.dart';
 import 'package:weatherapp_started/model/weather_data_current.dart';
 import 'package:weatherapp_started/utils/custom_colors.dart';
@@ -56,8 +55,7 @@ class CurrentWeatherWidget extends StatelessWidget {
                   ),
                 ),
                 TextSpan(
-                  text:
-                      '${weatherDataCurrent.current.weather![0].description}',
+                  text: '${weatherDataCurrent.current.weather![0].description}',
                   style: const TextStyle(
                     color: Colors.grey,
                     fontWeight: FontWeight.w400,

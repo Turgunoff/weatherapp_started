@@ -5,13 +5,12 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:weatherapp_started/model/weather_data_daily.dart';
-import 'package:weatherapp_started/model/weather_data_hourly.dart';
 import 'package:weatherapp_started/utils/custom_colors.dart';
 
 class DailyWeatherWidget extends StatelessWidget {
-  WeatherDataDaily dailyWeatherData;
+  final WeatherDataDaily dailyWeatherData;
 
-  DailyWeatherWidget({super.key, required this.dailyWeatherData});
+  const DailyWeatherWidget({super.key, required this.dailyWeatherData});
 
   String getDay(final day) {
     DateTime date = DateTime.fromMillisecondsSinceEpoch(day * 1000);
@@ -22,7 +21,6 @@ class DailyWeatherWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 400,
       margin: const EdgeInsets.all(20),
       padding: const EdgeInsets.all(15),
       decoration: BoxDecoration(
@@ -52,8 +50,9 @@ class DailyWeatherWidget extends StatelessWidget {
 
   Widget dailyList() {
     return SizedBox(
-      height: 300,
+      height: 350,
       child: ListView.builder(
+        physics: const NeverScrollableScrollPhysics(),
         scrollDirection: Axis.vertical,
         itemCount: dailyWeatherData.daily.length > 7
             ? 7
@@ -62,7 +61,7 @@ class DailyWeatherWidget extends StatelessWidget {
           return Column(
             children: [
               Container(
-                height: 60,
+                height: 50,
                 padding: const EdgeInsets.only(left: 10, right: 10),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,

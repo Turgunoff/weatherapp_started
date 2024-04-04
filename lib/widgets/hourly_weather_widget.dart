@@ -15,7 +15,7 @@ class HourlyWeatherWidget extends StatelessWidget {
 
   HourlyWeatherWidget({super.key, required this.weatherDataHourly});
 
-  RxInt cardIndex = GlobalController().getIndex();
+  final RxInt cardIndex = GlobalController().getIndex();
 
   @override
   Widget build(BuildContext context) {
@@ -91,11 +91,11 @@ class HourlyWeatherWidget extends StatelessWidget {
 }
 
 class HourlyDetails extends StatelessWidget {
-  int temp;
-  int index;
-  int cardIndex;
-  int timeStamp;
-  String weatherIcon;
+  final int temp;
+  final int index;
+  final int cardIndex;
+  final int timeStamp;
+  final String weatherIcon;
 
   String getTime(final timeStamp) {
     DateTime dateTime = DateTime.fromMillisecondsSinceEpoch(timeStamp * 1000);
@@ -104,7 +104,7 @@ class HourlyDetails extends StatelessWidget {
     return x;
   }
 
-  HourlyDetails({
+  const HourlyDetails({
     super.key,
     required this.temp,
     required this.index,

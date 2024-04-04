@@ -8,9 +8,9 @@ import 'package:weatherapp_started/model/weather_data_current.dart';
 import 'package:weatherapp_started/utils/custom_colors.dart';
 
 class ComfortLevel extends StatelessWidget {
-  WeatherDataCurrent weatherDataCurrent;
+  final WeatherDataCurrent weatherDataCurrent;
 
-  ComfortLevel({super.key, required this.weatherDataCurrent});
+  const ComfortLevel({super.key, required this.weatherDataCurrent});
 
   @override
   Widget build(BuildContext context) {
